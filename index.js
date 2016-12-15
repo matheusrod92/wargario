@@ -9,9 +9,11 @@ var io = require('socket.io')(server);
 var Player = require('./Player.class.js');
 var routes = require('./routes');
 
+var port = process.env.PORT || 4000;
+
 // NOTE: Server Config
-server.listen(4000, function(){
-  console.log('[SERVER]'.bold.green + ' LISTENING ON PORT 4000');
+server.listen(port, function(){
+  console.log('[SERVER]'.bold.green + ' LISTENING ON PORT ' + port);
 });
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
