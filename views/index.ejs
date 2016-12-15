@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WARgar.io | aeHOOOOO</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <style>
+  canvas {
+    border: 1px solid #cecece;
+    border-radius: 5px;
+  }
+  canvas:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  }
+  #chatBody {
+    height: 620px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  </style>
+</head>
+<body>
+  <audio autoplay loop preload="auto" id="music">
+   <source src="audio/background_music.mp3" type="audio/mpeg"></source>
+   Your browser does not support the audio element.
+  </audio>
+  <div>
+    <div id="game" class="col-md-6" style="margin-top: 12px;">
+      <canvas id="gameScreen" width="700" height="700" style="" tabindex="1"></canvas>
+    </div>
+    <div id="chat" class="col-md-6">
+      <h2>Chat</h2>
+      <div id="chatBody">
+        <ul></ul>
+      </div>
+      <form role="form" id="chat--form">
+        <div class="input-group">
+          <span class="input-group-addon" id="chat--userName"></span>
+          <input type="text" class="form-control" id="chat--message" autocomplete="off">
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- NOTE: Meu modal -->
+  <div class="modal fade" id="configModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">Bem-vindo ao WARgar.io!</h4>
+        </div>
+        <div class="modal-body">
+          <form role="form" id="config--set">
+            <div class="form-group">
+              <label for="inputNickname">Nome:</label>
+              <input type="text" class="form-control" id="config--setName">
+            </div>
+            <div class="row">
+              <div class="form-group col-xs-6">
+                <label for="inputNickname">Cor de fundo:</label>
+                <input type="color" class="form-control" id="config--setFillColor">
+              </div>
+              <div class="form-group col-xs-6">
+                <label for="inputNickname">Cor da borda:</label>
+                <input type="color" class="form-control" id="config--setBorderColor">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-success btn-block" id="config--submit">Entrar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script>
+    $(window).on('load', function(){
+        $('#configModal').modal({backdrop: 'static', keyboard: false});
+        $('#music').prop('volume', 0.3);
+    });
+  </script>
+  <script src="javascript/game.js"></script>
+  <script src="javascript/chat.js"></script>
+  <script src="javascript/options.js"></script>
+</body>
+</html>

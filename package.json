@@ -1,0 +1,29 @@
+{
+  "name": "sistemasdistribuidos",
+  "version": "1.0.0",
+  "description": "Jogo multiplayer com sockets para a disciplinas do professor Isidro",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sistemas",
+    "distribuidos",
+    "ufabc",
+    "isidro",
+    "sockets",
+    "nodejs",
+    "express"
+  ],
+  "author": "Matheus Rodrigues",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^2.5.5",
+    "express": "^4.14.0",
+    "socket.io": "^1.7.2"
+  },
+  "devDependencies": {
+    "colors": "^1.1.2"
+  }
+}
