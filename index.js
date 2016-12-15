@@ -36,8 +36,8 @@ io.on('connection', function(socket){
 
     player.id = socket.id;
     player.luck = Math.floor(Math.random() * 10) + 1;
-    player.x = Math.floor(Math.random() * 650) + 1;
-    player.y = Math.floor(Math.random() * 650) + 1;
+    player.x = Math.floor(Math.random() * 550) + 1;
+    player.y = Math.floor(Math.random() * 550) + 1;
     player.nickname = data.nickname;
     player.fillColor = data.fillColor;
     player.radiusColor = data.radiusColor;

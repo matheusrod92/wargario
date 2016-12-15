@@ -4,7 +4,7 @@ ctx.font = '10px Arial';
 var socket = io.connect('/');
 
 socket.on('newPositions',function(data){
-  ctx.clearRect(0,0,700,700);
+  ctx.clearRect(0,0,600,600);
   for(var i = 0 ; i < data.length; i++){
     ctx.beginPath();
     ctx.arc(data[i].x, data[i].y, data[i].radius, 0, 2*Math.PI);

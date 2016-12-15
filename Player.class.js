@@ -22,9 +22,9 @@ module.exports = class Player{
       this.x-=this.speed;
 
     if(this.y < 0) this.y = 0;
-    else if(this.y > 700) this.y = 700;
+    else if(this.y > 600) this.y = 600;
     if(this.x < 0) this.x = 0;
-    else if(this.x > 700) this.x = 700;
+    else if(this.x > 600) this.x = 600;
 
   }
 
@@ -40,23 +40,23 @@ module.exports = class Player{
           if(this.radius > enemy.radius){
             this.radius+=2;
             enemy.radius = 5;
-            enemy.x = Math.floor(Math.random() * 650) + 1;
-            enemy.y = Math.floor(Math.random() * 650) + 1;
+            enemy.x = Math.floor(Math.random() * 550) + 1;
+            enemy.y = Math.floor(Math.random() * 550) + 1;
             this.speed-=0.20;
             if(this.speed <= 1) this.speed = 1;
           } else if(this.radius < enemy.radius){
             this.radius=5;
             enemy.radius+=2;
-            this.x = Math.floor(Math.random() * 650) + 1;
-            this.y = Math.floor(Math.random() * 650) + 1;
+            this.x = Math.floor(Math.random() * 550) + 1;
+            this.y = Math.floor(Math.random() * 550) + 1;
             enemy.speed-=0.20;
             if(enemy.speed <= 1) enemy.speed = 1;
           } else {
             if(this.luck > enemy.luck) {
               this.radius += 2;
               enemy.radius=5;
-              enemy.x = Math.floor(Math.random() * 650) + 1;
-              enemy.y = Math.floor(Math.random() * 650) + 1;
+              enemy.x = Math.floor(Math.random() * 550) + 1;
+              enemy.y = Math.floor(Math.random() * 550) + 1;
               this.speed-=0.20;
               if(this.speed <= 1) this.speed = 1;
             }
