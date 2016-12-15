@@ -1,5 +1,5 @@
 {
-  "name": "sistemasdistribuidos",
+  "name": "wargario",
   "version": "1.0.0",
   "description": "Jogo multiplayer com sockets para a disciplinas do professor Isidro",
   "main": "index.js",
